@@ -1,0 +1,15 @@
+homeassistant:
+light: !include lights.yaml
+switch:
+  - platform: rpi_gpio
+    ports:
+      11: Fan Office
+      12: Light Desk
+sensor:
+  - platform: dht
+    sensor: DHT11
+    pin: 14
+    name: Living Room
+    monitored_conditions:
+    -  temperature
+    -  humidity

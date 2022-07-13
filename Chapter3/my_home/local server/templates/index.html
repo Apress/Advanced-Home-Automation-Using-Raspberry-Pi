@@ -1,0 +1,38 @@
+<!-- /home/pi/Desktop/my_home/templates/index.html -->
+ 
+ 
+<!DOCTYPE html>
+   <head>
+      <title>My Home</title>
+      <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+      <!-- below line will refresh your page after every 5 seconds-->
+      <meta http-equiv="refresh" content="5">      
+   </head>
+ 
+   <body>
+        <h1 align=center>Home Control</h1>
+        <!-- Send temperature and humidity value-->
+        <h2> Room Temperature Monitor </h2>
+        <h3> Temperature  : {{ temperature  }} C</h3>
+        <h3>  Humidity     :    {{ humidity  }} %</h3>
+        <br>
+         
+        <h2> Room Light Control </h2>
+         <!-- Create buttons and check for the button state-->
+        <h3> RED LED ---  {{ led_bulb1  }}  ---  
+            {% if  led_bulb1   == 1 %}
+                <a href="/led_bulb1/off"class="button">TURN OFF</a>
+            {% else %}
+                <a href="/led_bulb1/on" class="button">TURN ON</a>
+            {% endif %} 
+        </h3>
+         
+        <h3> BLUE LED ---  {{ led_bulb2  }}  --- 
+            {% if  led_bulb2   == 1 %}
+                <a href="/led_bulb2/off"class="button">TURN OFF</a>
+            {% else %}
+                <a href="/led_bulb2/on" class="button">TURN ON</a>
+            {% endif %} 
+        </h3>
+   </body>
+</html>
